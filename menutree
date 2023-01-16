@@ -1,0 +1,64 @@
+# Main menu
+main_menu() {
+    clear
+    echo -e "\033[1;34mMain Menu\033[0m"
+    echo "1. Sub-menu 1"
+    echo "2. Sub-menu 2"
+    echo "3. Exit"
+    echo -n "Enter your choice: "
+    read choice
+    case $choice in
+        1) sub_menu_1 ;;
+        2) sub_menu_2 ;;
+        3) exit 0 ;;
+        *) echo -e "\033[1;31mInvalid choice.\033[0m"
+           sleep 1
+           main_menu ;;
+    esac
+}
+
+# Sub-menu 1
+sub_menu_1() {
+    clear
+    echo -e "\033[1;34mSub-Menu 1\033[0m"
+    echo "1. Option 1"
+    echo "2. Option 2"
+    echo "3. Main menu"
+    echo -n "Enter your choice: "
+    read choice
+    case $choice in
+        1) echo -e "\033[1;32mYou selected option 1.\033[0m"
+           sleep 1
+           sub_menu_1 ;;
+        2) echo -e "\033[1;32mYou selected option 2.\033[0m"
+           sleep 1
+           sub_menu_1 ;;
+        3) main_menu ;;
+        *) echo -e "\033[1;31mInvalid choice.\033[0m"
+           sleep 1
+           sub_menu_1 ;;
+    esac
+}
+
+# Sub-menu 2
+sub_menu_2() {
+    clear
+    echo -e "\033[1;34mSub-Menu 2\033[0m"
+    echo "1. Option 1"
+    echo "2. Option 2"
+    echo "3. Main menu"
+    echo -n "Enter your choice: "
+    read choice
+    case $choice in
+        1) echo -e "\033[1;32mYou selected option 1.\033[0m"
+           sleep 1
+           sub_menu_2 ;;
+        2) echo -e "\033[1;32mYou selected option 2.\033[0m"
+           sleep 1
+           sub_menu_2 ;;
+        3) main_menu ;;
+        *) echo -e "\033[1;31mInvalid choice.\033[0m"
+           sleep 1
+           sub_menu_2 ;;
+    esac
+}
